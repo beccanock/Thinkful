@@ -55,14 +55,18 @@ with con:
 	cols = [desc[0] for desc in cur.description]
 	df = pd.DataFrame(rows, columns = cols)
 
-	warmest_July = []
-	for i in range(0,10):
-		warmest_July.append(df.loc[i,'name'])
 
 #Print out the resulting city and state in a full sentence
 
 #"The cities that are warmest in July are:" + 
+
+warmest_July = {}
+for i in range(0,10):
+	warmest_July[df.loc[i,'name']] = df.loc[i, 'state']
+print(warmest_July)
+
 print("The cities that are warmest in July are:" + str(warmest_July))
+
 
 
 
