@@ -48,3 +48,5 @@ f = model.fit()
 f.summary()
 
 print(f.summary())
+
+loansData.to_csv('loansData_clean.csv', header=True, index=False)
